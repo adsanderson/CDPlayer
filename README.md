@@ -1,2 +1,0 @@
-# CDPlayer
-Created with CodeSandbox

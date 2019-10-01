@@ -1,0 +1,449 @@
+body {
+  background-color: #666;
+  margin: 0rem;
+}
+
+.cd-player {
+  width: 24rem;
+  padding: 0.4rem 2rem;
+  margin-top: 12rem;
+  background: #d1d2ca;
+  margin: 12rem auto 0 auto;
+}
+
+.digital-display__char {
+  display: inline-block;
+  width: 1em;
+  font-size: 2rem;
+}
+
+.digital-display__char--track {
+  display: inline-block;
+  width: 1em;
+  font-size: 2rem;
+}
+
+/* .display {
+  font-family: "Orbitron", sans-serif;
+  font-variant-numeric: tabular-nums;
+  /* background-color: #aca177;
+  color: rgba(0, 0, 0, 0.8);
+  padding: 0.1rem;
+
+  box-shadow: -0.05rem -0.05rem 0.3rem 0.3rem rgba(0, 0, 0, 0.5) inset,
+    0px 0px 1px 1px rgba(0, 0, 0, 0.8);
+  display: inline;
+  border-radius: 0.15rem;
+
+  max-width: 280px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+
+  text-align: center;
+} */
+
+.display {
+  font-family: "Orbitron", sans-serif;
+  font-variant-numeric: tabular-nums;
+  background-color: #773d29;
+  color: #d7864b;
+  padding: 0.1rem;
+  margin: 0 0.6rem;
+
+  /* box-shadow: -0.05rem -0.05rem 0.3rem 0.3rem rgba(0, 0, 0, 0.5) inset,
+    0px 0px 1px 1px rgba(0, 0, 0, 0.8); */
+  box-shadow: -0.1rem -0.1rem 0 0.2rem rgba(0, 0, 0, 0.5) inset,
+    0px 0px 1px 1px rgba(0, 0, 0, 0.8);
+  display: inline;
+  border-radius: 0.15rem;
+
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+
+  text-align: center;
+}
+
+.cd-buttons {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 3fr 2fr 2fr 2fr;
+  /* align-items: center; */
+}
+
+.cd-button {
+  border: none;
+  padding: 0.1rem 0;
+  margin: 0rem 0.1rem 0.8rem 0.1rem;
+  /* box-shadow: inset 1px 6px 12px #dde2e7, inset -1px -10px 5px #92969b,
+    1px 1px 2px 2px rgba(0, 0, 0, 0.6); */
+  box-shadow: inset 1px 2px 0 1px #dde2e7, inset -1px -2px 0 1px #92969b,
+    1px 1px 0 2px rgba(0, 0, 0, 0.6);
+  background-color: #bfc6ce;
+  color: #eee;
+  border-radius: 0.15rem;
+  outline: none;
+  height: 1rem;
+}
+
+.cd-button__label {
+  font-size: 1.4rem;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  padding: 0.8rem 0 0.2rem 0;
+}
+
+.cd-button:active {
+  transform: translate(1px, 1px);
+  /* box-shadow: inset 1px 6px 12px #dde2e7, inset -1px -10px 5px #92969b,
+    0px 0px 1px 2px rgba(0, 0, 0, 0.6); */
+  box-shadow: inset 1px 2px 0 1px #dde2e7, inset -1px -2px 0 1px #92969b,
+    1px 1px 0 2px rgba(0, 0, 0, 0.6);
+}
+
+.cd-drawer {
+  height: 26rem;
+  background-color: #999;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  box-shadow: -0.2rem -0.3rem 0 0.5rem rgba(0, 0, 0, 0.6) inset,
+    0px 0px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.cd-drawer__center {
+  width: 10rem;
+  position: absolute;
+  top: 7rem;
+}
+
+.cd-drawer__tray {
+  position: absolute;
+  width: 100%;
+  top: 15rem;
+  transition: transform 800ms;
+}
+
+.cd-drawer__tray--no_disc {
+  transform: translate(0, -12rem);
+}
+
+.cd-drawer__tray--disc_ready {
+  transform: translate(0, -12rem);
+}
+
+.cd_drawer__label {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 1rem;
+  background-color: #cfcdc8;
+  position: absolute;
+  width: 50%;
+  height: 1rem;
+  left: 0;
+  top: 11.5rem;
+  /* border: 2px solid rgba(0, 0, 0, 0.8); */
+  box-shadow: 0.1rem 0.1rem 0 0.2rem rgba(0, 0, 0, 0.6);
+}
+
+.cd {
+  margin-top: 2rem;
+  width: 20rem;
+  height: 20rem;
+  transition: transform 800ms;
+  position: relative;
+  /* display: flex; */
+  /* justify-content:  */
+  text-align: center;
+}
+
+.cd__label {
+  font-size: 22px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  fill: rgba(0, 0, 0, 0.8);
+}
+
+.cd--no_disc {
+  transform: translate(0, -23rem);
+}
+
+.cd--disc_ready {
+  transform: translate(0, -13rem);
+}
+
+.cd--playing svg {
+  animation: infinite-spinning 0.1s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bevel {
+  background-color: #d1d2ca;
+  height: 0.4rem;
+  width: 101%;
+  position: absolute;
+  transform-origin: bottom;
+  perspective-origin: bottom;
+  transition: transform 300ms;
+  top: -0.4rem;
+  transform-style: preserve-3d;
+  box-shadow: 0rem 0.2rem 0 0 rgba(0, 0, 0, 0.6);
+}
+
+.start__x {
+  position: relative;
+}
+.start {
+  position: absolute;
+  width: 14rem;
+  bottom: -0.5rem;
+  right: -14.5rem;
+}
+
+.start__line {
+  fill: none;
+  stroke: rgb(204, 0, 0);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 5px;
+  animation: line-anim 1200ms ease-out;
+
+  stroke-dasharray: 91 91;
+}
+
+.start__point {
+  fill: none;
+  stroke: rgb(204, 0, 0);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 5px;
+  animation: line-anim 1250ms ease-out;
+
+  stroke-dasharray: 80 80;
+}
+
+.start__text {
+  fill: rgb(204, 0, 0);
+  font-family: Orbitron;
+  font-size: 28px;
+  white-space: pre;
+}
+
+@keyframes line-anim {
+  from {
+    stroke-dashoffset: 91;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes point-anim {
+  from {
+    stroke-dashoffset: 80;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.click {
+  stroke: rgb(0, 0, 0);
+  fill: none;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.click--1 {
+  stroke-dasharray: 160 160;
+  animation: line-anim--1 400ms;
+}
+@keyframes line-anim--1 {
+  from {
+    stroke-dashoffset: 160;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.click--2 {
+  stroke-dasharray: 70 70;
+  animation: line-anim--2 150ms forwards;
+  animation-delay: 350ms;
+  stroke-dashoffset: 70;
+}
+@keyframes line-anim--2 {
+  from {
+    stroke-dashoffset: 70;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.click--3 {
+  stroke-dasharray: 50 50;
+  animation: line-anim--3 100ms forwards;
+  animation-delay: 550ms;
+  stroke-dashoffset: 50;
+}
+@keyframes line-anim--3 {
+  from {
+    stroke-dashoffset: 50;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.click--4 {
+  stroke-dasharray: 90 90;
+  animation: line-anim--4 200ms forwards;
+  animation-delay: 700ms;
+  stroke-dashoffset: 90;
+}
+@keyframes line-anim--4 {
+  from {
+    stroke-dashoffset: 90;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.click--5 {
+  stroke-dasharray: 80 80;
+  animation: line-anim--5 200ms forwards;
+  animation-delay: 950ms;
+  stroke-dashoffset: 80;
+}
+@keyframes line-anim--5 {
+  from {
+    stroke-dashoffset: 80;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.click--6 {
+  stroke-dasharray: 80 80;
+  animation: line-anim--6 200ms forwards;
+  animation-delay: 1200ms;
+  stroke-dashoffset: 80;
+}
+@keyframes line-anim--6 {
+  from {
+    stroke-dashoffset: 80;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.click--7 {
+  stroke-dasharray: 50 50;
+  animation: line-anim--7 150ms forwards;
+  animation-delay: 1450ms;
+  stroke-dashoffset: 50;
+}
+@keyframes line-anim--7 {
+  from {
+    stroke-dashoffset: 50;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.click--8 {
+  stroke-dasharray: 300 300;
+  animation: line-anim--8 600ms forwards;
+  animation-delay: 1600ms;
+  stroke-dashoffset: 300;
+}
+@keyframes line-anim--8 {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.click--9 {
+  stroke-dasharray: 140 140;
+  animation: line-anim--9 300ms forwards;
+  animation-delay: 2250ms;
+  stroke-dashoffset: 140;
+}
+@keyframes line-anim--9 {
+  from {
+    stroke-dashoffset: 140;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.click--10 {
+  stroke-dasharray: 80 80;
+  animation: line-anim--10 200ms forwards;
+  animation-delay: 2600ms;
+  stroke-dashoffset: 80;
+}
+@keyframes line-anim--10 {
+  from {
+    stroke-dashoffset: 80;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.click--11 {
+  stroke-dasharray: 20 20;
+  animation: line-anim--11 50ms forwards;
+  animation-delay: 2850ms;
+  stroke-dashoffset: 20;
+}
+@keyframes line-anim--11 {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.click--12 {
+  stroke-dasharray: 20 20;
+  animation: line-anim--12 50ms forwards;
+  animation-delay: 3000ms;
+  stroke-dashoffset: 20;
+}
+@keyframes line-anim--12 {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
